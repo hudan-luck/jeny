@@ -1,3 +1,1 @@
-hello
-who am she
-who am he
+the is the jdk first version (0.01:)
