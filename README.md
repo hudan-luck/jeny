@@ -1,3 +1,3 @@
-the is the jdk first version (0.01)
-the is the jdk first version (0.02)
-the is the jdk first version (0.03)
+网站的访问路径如下
+http://localhost/jeny/public/index.php?r=site/test
+
