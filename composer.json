@@ -1,0 +1,19 @@
+{
+"name" : "jeny-framwork",
+"description": "jeny_simpale",
+"autoload": {
+    "psr-4": {
+            "jeny\\" : ""
+        }
+    },
+"require": {
+                "aferrandini/phpqrcode": "^1.0",
+                                "monolog/monolog": "^1.23"
+        },
+        "repositories": {
+                "packagist": {
+                        "type": "composer",
+                        "url": "https://packagist.phpcomposer.com"
+                }
+        }
+}
