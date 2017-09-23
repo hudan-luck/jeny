@@ -1,7 +1,9 @@
 <?php
 namespace jeny\controllers;
 
-class SiteController
+use sf\web\Controller;
+
+class SiteController extends Controller
 {
     /**
 	 * 
@@ -13,7 +15,17 @@ class SiteController
     	
 	public function actionView() 
 	{
-		$body = 'the body informaction';
-		require '../views/site/view.php';
+		/*$body = 'the body informaction';
+		require '../views/site/view.php'; */
+        
+        $this->render('site/view', ['body' => 'the body informaction']);
+        
 	}
+    
+    public function actionData()
+    {
+        $data = ['first' => 'apple', 'second' => 'pear'];
+        
+        echo $this->toJson($data);
+    }
 }

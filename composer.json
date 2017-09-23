@@ -3,6 +3,7 @@
 "description": "jeny_simpale",
 "autoload": {
     "psr-4": {
+            "sf\\": "src/",
             "jeny\\" : ""
         }
     },
