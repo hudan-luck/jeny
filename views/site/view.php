@@ -2,6 +2,8 @@
 	<head>
 		<title> title </title>
 	</head>
-	<body> <?php echo $body ; ?>
+	<body>body: <?php echo $body ; ?><br/>
+          controllerName: <?php echo $this->controllerName; ?><br/>
+          actionName : <?php echo $this->actionName;?><br/>
 	</body>
 </html>
