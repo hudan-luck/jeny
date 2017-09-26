@@ -15,7 +15,7 @@ class Application extends \sf\base\Application
 
         $controller->controllerName = $controllerName;
         $controller->actionName = $actionName; 
-
+        //第一个参数是类名，第二哥参数是方法名
 		return call_user_func([$controller, 'action'. ucfirst($actionName)]);	
 		
 	}

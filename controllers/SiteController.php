@@ -3,6 +3,7 @@ namespace jeny\controllers;
 
 use sf\web\Controller;
 use jeny\models\User;
+use sf\db\ConnectionSf;
 
 class SiteController extends Controller
 {
@@ -73,5 +74,22 @@ class SiteController extends Controller
         $user_model->age = 10;
         $result = $user_model->insert();
         var_dump($result);die;
+    }
+    
+    public function actionCache()
+    {
+        $cache = ConnectionSf::createObject('cache');
+        $result = $cache->set('test', 'test');
+        $result = $cache->get('test');
+        $cache->flush();
+        $result = $cache->get('test');
+        var_dump($result);die;
+    }
+    
+    public function actionRedis()
+    {
+        $redis = ConnectionSf::createObject('redis');
+        $result = $redis->set('china', 'hello world');
+        var_dump($redis->get('china'));die;
     }
 }
