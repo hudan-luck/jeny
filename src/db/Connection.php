@@ -17,4 +17,8 @@ class Connection
         return new PDO($this->dsn, $this->username, $this->password, $this->attributes);
 	}
 
+	public function init()
+	{
+		
+	}
 }

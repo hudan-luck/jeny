@@ -1,8 +1,9 @@
 <?php
 namespace sf\db;
 use sf\db;
+use sf\base\Component; 
 
-class ConnectionSf
+class ConnectionSf extends Component
 {
     public static function createObject($name)
     {

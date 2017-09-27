@@ -6,7 +6,8 @@ use PDO;
 use sf\db\Connection;
 use sf\db\ConnectionSf;
 
-class Model implements ModelInterface
+
+class Model implements ModelInterface 
 {
 	/**
 	 * pdo 链接对象
@@ -44,33 +45,6 @@ class Model implements ModelInterface
 
 	public static function findOne($condition)
 	{
-		/*$sql = "select * from " . static::tableName() . ' where ';
-
-        $params = [];
-        if (!$condition) {
-            $params = array_values($condition);
-            $keys = [];
-            foreach ($condition as $key => $val) {
-                array_push($keys , "$key = ?");
-            }	
-            $sql .= implode(' and ', $keys);
-        }
-		$stmt = static::getDb()->prepare($sql);
-		$rs = $stmt->execute($params);
-		if ($rs) {
-			$row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (!empty($row)) {
-                // 创建相应model的实例
-                $model = new static();
-                foreach ($row as $rowKey => $rowValue) {
-                    // 给model的属性赋值
-                    $model->$rowKey = $rowValue;
-                }
-                return $model;
-            }
-		}
-		return null;
-        */
 		list($where, $params) = static::buildWhere($condition);
 		$sql = "select * from ". static::tableName() . $where;
 		$stmt = static::getDb()->prepare($sql);

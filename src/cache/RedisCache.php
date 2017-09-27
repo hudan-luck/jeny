@@ -9,6 +9,7 @@ use Redis;
 class RedisCache extends Component implements CacheInterface
 {
 	public $redis;
+
 	public function init() {
 	 	if (is_array($this->redis)) {
 			extract($this->redis);

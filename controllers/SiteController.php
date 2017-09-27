@@ -82,7 +82,7 @@ class SiteController extends Controller
         $result = $cache->set('test', 'test');
         $result = $cache->get('test');
         $cache->flush();
-        $result = $cache->get('test');
+        //$result = $cache->get('test');
         var_dump($result);die;
     }
     
@@ -91,5 +91,11 @@ class SiteController extends Controller
         $redis = ConnectionSf::createObject('redis');
         $result = $redis->set('china', 'hello world');
         var_dump($redis->get('china'));die;
+    }
+    
+    public function actionRender()
+    {
+        $body = 'there is the first body';
+        $this->render('render', ['body' => $body]);          
     }
 }
