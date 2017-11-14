@@ -3,11 +3,11 @@ namespace sf\web;
 
 class Controller extends \sf\base\Controller
 {
-    public function render($view, $params = [])
+    /*public function render($view, $params = [])
     {   
        extract($params);
        return require '../views/'. $view . '.php';
-    }
+    }*/
 
     public function toJson($data)
     {
@@ -17,7 +17,7 @@ class Controller extends \sf\base\Controller
         return json_encode($data);
     }
     
-    /*public function render($view, $params = [])
+    public function render($view, $params = [])
     {
         $file = '../views/' . $view . '.sf';
         $fileContent = file_get_contents($file);
@@ -28,6 +28,7 @@ class Controller extends \sf\base\Controller
                     if ($id ==  T_INLINE_HTML) {
                         $content = preg_replace('/{{(.*)}}/', '<?php echo $1 ?>', $content);
                     }
+                $result .= $content;
             } else {
                 $result .= $token; 
             }
@@ -36,5 +37,5 @@ class Controller extends \sf\base\Controller
         file_put_contents($generateFile, $result);
         extract($params);
         require_once $generateFile;
-    }*/
+    }
 } 

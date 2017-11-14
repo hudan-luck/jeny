@@ -96,6 +96,6 @@ class SiteController extends Controller
     public function actionRender()
     {
         $body = 'there is the first body';
-        $this->render('render', ['body' => $body]);          
+        $this->render('site/render', ['body' => $body]);          
     }
 }
